@@ -1,6 +1,7 @@
 # Html::Pipeline::Gitlab
 
-TODO: Write a gem description
+This gem implements various filters for [html-pipeline](https://github.com/jch/html-pipeline)
+ used by [GitLab](https://about.gitlab.com).
 
 ## Installation
 
@@ -18,13 +19,9 @@ Or install it yourself as:
 
     $ gem install html-pipeline-gitlab
 
-## Usage
-
-TODO: Write usage instructions here
-
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/html-pipeline-gitlab/fork )
+1. Fork it ( https://github.com/razer6/html-pipeline-gitlab/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
