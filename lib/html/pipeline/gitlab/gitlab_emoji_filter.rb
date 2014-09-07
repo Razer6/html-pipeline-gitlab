@@ -54,26 +54,10 @@ module HTML
           context[:asset_root]
         end
 
-        # The url path to link emoji sprites
-        #
-        # :file_name can be used in the asset_path as a placeholder for the 
-        # sprite file name. If no asset_path is set in the context 
-        # "emoji/:file_name" is used.
-        #
-        # Returns the context's asset_path or the default path if no context 
-        # asset_path is given.
-        def asset_path(name)
-          if context[:asset_path]
-            context[:asset_path].gsub(":file_name", emoji_filename(name))
-          else
-            File.join('emoji', emoji_filename(name))
-          end
-        end
-
         private
 
         def emoji_url(name)
-          File.join(asset_root, asset_path(name))
+          File.join(asset_root, 'emoji', emoji_filename(name))
         end
 
         # Build a regexp that matches all valid :emoji: names.
