@@ -1,9 +1,2 @@
-require "html/pipeline/gitlab/version"
-
-module Html
-  module Pipeline
-    module Gitlab
-      # Your code goes here...
-    end
-  end
-end
+require 'html/pipeline/gitlab/version'
+require 'html/pipeline/gitlab/gitlab_emoji_filter'
