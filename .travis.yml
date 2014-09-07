@@ -9,3 +9,5 @@ install:
   - travis_retry bundle config build.nokogiri --use-system-libraries
   - travis_retry bundle install
 script: rake test
+notifications:
+  email: false
