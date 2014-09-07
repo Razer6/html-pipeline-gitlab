@@ -1,8 +1,8 @@
 require 'test_helper'
-require 'html/pipeline/gitlab/gitlab_emoji_filter'
+require 'html/pipeline/gitlab'
 
 class HTML::Pipeline::GitLabEmojiFilterTest < Minitest::Test
-  GitLabEmojiFilter = HTML::Pipeline::GitLabEmojiFilter
+  GitLabEmojiFilter = HTML::Pipeline::GitLab::GitLabEmojiFilter
   
   def test_emojify
     filter = GitLabEmojiFilter.new("<p>:heart:</p>", {:asset_root => 'https://foo.com'})

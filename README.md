@@ -3,6 +3,10 @@
 This gem implements various filters for [html-pipeline](https://github.com/jch/html-pipeline)
  used by [GitLab](https://about.gitlab.com).
 
+## Code Status
+
+[![Build Status](https://semaphoreapp.com/api/v1/projects/b9b808be-6c72-4e76-ae62-79b3a25a022a/243365/badge.png)](https://semaphoreapp.com/razer6/html-pipeline-gitlab)
+
 ## Installation
 
 Add this line to your application's Gemfile:
