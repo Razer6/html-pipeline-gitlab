@@ -10,12 +10,12 @@ module HTML
       #
       # Context:
       #   :asset_root (required) - base url to link to emoji sprite
-      #   :asset_path (optional) - url path to link to emoji sprite. 
-      #      :file_name can be used as a placeholder for the sprite file name. 
+      #   :asset_path (optional) - url path to link to emoji sprite.
+      #      :file_name can be used as a placeholder for the sprite file name.
       #      If no asset_path is set "emoji/:file_name" is used.
       class GitLabEmojiFilter < Filter
         def call
-          doc.search('text()').each do |node|
+          search_text_nodes(doc).each do |node|
             content = node.to_html
             next if !content.include?(':')
             next if has_ancestor?(node, %w(pre code))
@@ -25,7 +25,7 @@ module HTML
           end
           doc
         end
-        
+
         # Implementation of validate hook.
         # Errors should raise exceptions or use an existing validator.
         def validate
