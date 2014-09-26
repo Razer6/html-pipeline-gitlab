@@ -1,16 +1,19 @@
 require 'html/pipeline'
 require 'html/pipeline/gitlab/version'
-require 'html/pipeline/gitlab/gitlab_emoji_filter'
 
 module HTML
   class Pipeline
-    class Gitlab
+    class GitLab
       # GitLab related filters for html-pipeline. Implements new filters used
       # by GitLab.
 
-      # Most used markdown pipeline in GitLab. Performs emoji replace,,ent
+      # Custom filter implementations
+      autoload :GitLabEmojiFilter, 'html/pipeline/gitlab/gitlab_emoji_filter'
+
+      # Most used markdown pipeline in GitLab. Performs emoji replacement.
       MarkdownPipeline = HTML::Pipeline.new [
-        HTML::Pipeline::GitLab::GitLabEmojiFilter
+        SanitizationFilter,
+        GitLabEmojiFilter
       ]
     end
   end

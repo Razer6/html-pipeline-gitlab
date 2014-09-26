@@ -3,7 +3,7 @@ require 'html/pipeline/gitlab'
 
 class HTML::Pipeline::GitLabEmojiFilterTest < Minitest::Test
   GitLabEmojiFilter = HTML::Pipeline::GitLab::GitLabEmojiFilter
-  
+
   def test_emojify
     filter = GitLabEmojiFilter.new('<p>:heart:</p>', {asset_root: 'https://foo.com'})
     doc = filter.call
@@ -16,16 +16,16 @@ class HTML::Pipeline::GitLabEmojiFilterTest < Minitest::Test
     doc = filter.call
     assert_match block, doc.to_html
   end
-  
+
   def test_uri_encoding
     filter = GitLabEmojiFilter.new('<p>:+1:</p>', {asset_root: 'https://foo.com'})
     doc = filter.call
     assert_match 'https://foo.com/emoji/%2B1.png', doc.search('img').attr('src').value
   end
-  
+
   def test_required_context_validation
-    exception = assert_raises(ArgumentError) { 
-      GitLabEmojiFilter.call("", {}) 
+    exception = assert_raises(ArgumentError) {
+      GitLabEmojiFilter.call("", {})
     }
     assert_match /:asset_root/, exception.message
   end

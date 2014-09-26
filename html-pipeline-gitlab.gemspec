@@ -23,4 +23,5 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency 'html-pipeline', '~> 1.11.0'
   spec.add_runtime_dependency 'gitlab_emoji', '~> 0.0.1.1'
+  spec.add_runtime_dependency 'sanitize', '~> 3.0.2'
 end
